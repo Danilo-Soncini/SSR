@@ -3,6 +3,7 @@ import React from 'react';
 import {renderToString } from 'react-dom/server';
 import Home from './client/components/Home';
 
+const PORT = 9841;
 const app = express();
 
 app.use(express.static('public'));
@@ -21,6 +22,6 @@ app.get('/', (req, res) => {
   res.send(html);
 })
 
-app.listen(9841, () => {
-  console.log('Listening on port 9841')
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}` )
 })
