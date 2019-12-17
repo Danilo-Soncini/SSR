@@ -12,6 +12,7 @@ class UsersList extends Component {
     const { users } = this.props;
     return users.map( user => (<li key={user.id}>{user.name}</li>))
   }
+  
   render () {
     return (
       <div>
@@ -32,6 +33,7 @@ function mapStateToProps(state) {
   return { users : state.users}
 }
 
-export { loadData };
-
-export default connect(mapStateToProps,{ fetchUsers })(UsersList);
+export default {
+  component : connect(mapStateToProps,{ fetchUsers })(UsersList),
+  loadData
+}
