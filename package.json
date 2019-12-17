@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "ENV=development npm-run-all -p dev:*",
-    "dev:server": "nodemon --watch build --exec \"node build/bundle.js \"",
+    "dev:server": "nodemon build/bundle.js",
     "dev:buildserver": "webpack --config webpack.server.js --watch",
     "dev:buildclient": "webpack --config webpack.client.js --watch"
   },

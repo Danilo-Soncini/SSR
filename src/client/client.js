@@ -7,13 +7,16 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import reduceres from './reducers';
+import { renderRoutes } from 'react-router-config';
 
 const store = createStore(reduceres, {}, applyMiddleware(thunk));
 
 ReactDOM.hydrate(
   <Provider store={store}>
     <BrowserRouter>
-      <Routes />
+      <div>
+        {renderRoutes(Routes)} 
+      </div>
     </BrowserRouter>
   </Provider>, 
   document.querySelector('#root')
