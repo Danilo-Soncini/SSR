@@ -6,7 +6,7 @@ import { renderRoutes } from 'react-router-config';
 import { Provider } from 'react-redux';
 import serialize from 'serialize-javascript';
 
-export default (req,store, context) =>{
+export default (req, store, context) =>{
 
   const content = renderToString(
   <Provider store={store}>
